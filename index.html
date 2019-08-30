@@ -2,17 +2,55 @@
   <head>
     <!-- Load the latest version of TensorFlow.js -->
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
-    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet@2.0.2"></script>
     <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+    <!-- Add styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <div id="console"></div>
-    <!-- Add an image that we will use to test -->
-    <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
-    <button id="class-a">Add Person</button>
-    <button id="class-b">Add Bottle</button>
-    <button id="class-c">Add Book</button>
-    <button id="class-d">Add No Action</button>
+    <div class="container">
+      <div class="row align-items-end mt-4">
+        <div class="col-md-8">
+          <p class="display-2">🎬 Image Classifier</p>
+        </div>
+        <div class="col-md-4">
+          <p class="lead">Real-time browser-based Transfer Learning Image Classification Demo</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+            <video autoplay playsinline muted id="webcam" class="embed-responsive shadow" width=480 height=480></video>
+        </div>
+        <div class="col-md-6">
+          <div class="row lead">
+            <ul>
+              <li>Allow your browser to access the camera</li>
+              <li>Show the first item and click "Add A"</li>
+              <li>Move the item and record it from different angles</li>
+              <li>Repeat for "B" and "C" items</li>
+              <li>Now show new items to the camera and watch them be classified</li>
+            </ul>
+          </div>
+          <div class="row p-5 bg-light">
+              <div id="console" class="lead"></div>
+          </div>
+          <div class="row m-3 justify-content-between">
+              <button id="class-a" class="btn btn-outline-danger m-2">Add A</button>
+              <button id="class-b" class="btn btn-outline-success m-2">Add B</button>
+              <button id="class-c" class="btn btn-outline-warning m-2">Add C</button>
+              <button id="class-d" class="btn btn-outline-secondary m-2">Add Background</button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <footer class="row justify-content-between">
+        <a href="https://www.linkedin.com/in/martinbreuss/" target="_blank"><i class="material-icons">add_circle_outline</i></a>
+        <a href="https://github.com/martin-martin" target="_blank"><i class="material-icons">code</i></a>
+        <a href="https://www.martinbreuss.com/" target="_blank"><i class="material-icons">web</i></a>
+      </footer>
+    </div> 
     <!-- Load index.js after the content of the page -->
     <script src="index.js"></script>
   </body>
